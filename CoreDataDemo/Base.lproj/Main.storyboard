@@ -54,7 +54,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="C98-N1-ri0" kind="show" id="fug-zr-2CO"/>
+                                    <segue destination="C98-N1-ri0" kind="show" identifier="showDetail" id="fug-zr-2CO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

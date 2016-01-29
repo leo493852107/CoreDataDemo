@@ -10,7 +10,7 @@
 #import "Bug.h"
 #import "Project.h"
 
-@interface BugViewController ()
+@interface BugViewController ()<UIGestureRecognizerDelegate>
 
 @end
 
@@ -41,10 +41,17 @@
     
     self.screenshot.layer.borderColor = [UIColor blackColor].CGColor;
     self.screenshot.layer.borderWidth = 1.0f;
+    self.screenshot.backgroundColor=[UIColor redColor];
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(screenShotTapped:)];
+    tapGestureRecognizer.delegate =self;
     [self.screenshot addGestureRecognizer:tapGestureRecognizer];
     
+}
+
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    [super touchesBegan:touches withEvent:event];
+    NSLog(@"%@",touches);
 }
 
 - (void)screenShotTapped:(id)sender {
